@@ -1,4 +1,8 @@
 --TNP involved Crashes  by VIN
+-- chris_dwh.ufe_tc_reports@cdot_dal_link
+-- chris_dwh.ufe_tc_units_vehicles@cdot_dal_link
+-- cdot_dal.trips
+
 SELECT count (vin_no),
          count (distinct vin_no)
 FROM 
