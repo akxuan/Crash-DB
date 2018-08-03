@@ -20,7 +20,10 @@ FROM
         FROM chris_dwh.ufe_tc_reports@cdot_dal_link
         WHERE date_of_occurrence > '1-JAN-18'
                 AND date_of_occurrence < '1-JULY-18') t1
-        INNER JOIN chris_dwh.ufe_tc_units_vehicles@cdot_dal_link t2
+        INNER JOIN chris_dwh.ufe_tc_units_vehicles@cdot_dal_link t2   
+             -- ( select LIC_plate_NO, report_ID  from chris_dwh.ufe_tc_units_vehicles@cdot_dal_link  where unit_no =  1)
+             ---- select unite with plant number , TNP at fault
+             
         USING (report_id)
         INNER JOIN 
             (SELECT LIC_plate_NO,
