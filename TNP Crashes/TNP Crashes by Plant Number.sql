@@ -1,6 +1,6 @@
 -- select * from cdot_dal.TNP_vehicles; -- TNPvechile plate number 
 SELECT count (LIC_plate_NO),
-         count (distinct LIC_plate_NO)
+         count (distinct LIC_plate_NO) from
     (SELECT DISTINCT LIC_plate_NO,
          date_of_occurrence
     FROM 
@@ -19,4 +19,4 @@ SELECT count (LIC_plate_NO),
             INNER JOIN 
                 (SELECT license_plate_number LIC_plate_NO
                 FROM cdot_dal.TNP_vehicles) t3
-                USING (LIC_plate_NO); ) all_table 
+                USING (LIC_plate_NO) ) all_table ;
