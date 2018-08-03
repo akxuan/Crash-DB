@@ -17,7 +17,8 @@ FROM
          'DDMM') date_of_occurrence, to_number(to_char(date_of_occurrence,'HH24') ) crash_hr
         FROM chris_dwh.ufe_tc_reports@cdot_dal_link  WHERE date_of_occurrence > '1-JAN-18' AND date_of_occurrence < '1-JULY-18') t1
         INNER JOIN 
-       (select report_id, LIC_plate_no,VIN_NO from chris_dwh.ufe_tc_units_vehicles@cdot_dal_link) t2  USING (report_id)  --where unite_type = 1
+       (select report_id, LIC_plate_no,VIN_NO from chris_dwh.ufe_tc_units_vehicles@cdot_dal_link -- WHERE unit_no = 1
+       ) t2  USING (report_id)  
         inner join 
        (select LIC_plate_no,VIN_NO from chris_dwh.ufe_tc_units_vehicles@cdot_dal_link) t3 using (VIN_NO)
         INNER JOIN 
