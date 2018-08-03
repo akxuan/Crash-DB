@@ -1,0 +1,1 @@
+-- select * from cdot_dal.TNP_vehicles; -- TNPvechile plate number 
