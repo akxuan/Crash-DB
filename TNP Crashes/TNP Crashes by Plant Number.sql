@@ -1,6 +1,6 @@
 -- select * from cdot_dal.TNP_vehicles; -- TNPvechile plate number 
-SELECT count (vin_no),
-         count (distinct vin_no)
+SELECT count (LIC_plate_NO),
+         count (distinct LIC_plate_NO)
     (SELECT DISTINCT LIC_plate_NO,
          date_of_occurrence
     FROM 
